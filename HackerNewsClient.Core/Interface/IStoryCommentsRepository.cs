@@ -7,5 +7,6 @@ namespace HackerNewsClient.Core.Interface
 {
     public interface IStoryCommentsRepository : IGenericRepository<ItemCommentModel>
     {
+        List<ItemCommentModel> GetAll(List<long> ids);
     }
 }

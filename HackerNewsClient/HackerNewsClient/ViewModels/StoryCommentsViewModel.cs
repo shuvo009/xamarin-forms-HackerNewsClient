@@ -41,7 +41,7 @@ namespace HackerNewsClient.ViewModels
             try
             {
 
-                var storiesDb = storyCommentsRepository.GetAll();
+                var storiesDb = storyCommentsRepository.GetAll(ids);
                 foreach (var story in storiesDb)
                 {
                     CommentItems.Add(story);

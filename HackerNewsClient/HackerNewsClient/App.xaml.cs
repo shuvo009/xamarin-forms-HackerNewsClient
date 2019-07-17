@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using CommonServiceLocator;
+using HackerNewsClient.Core.Classes;
 using HackerNewsClient.Core.Interface;
 using HackerNewsClient.Repository;
 using HackerNewsClient.Service;
 using HackerNewsClient.Service.AppServices;
 using HackerNewsClient.Service.CommonServices;
 using HackerNewsClient.ViewModels;
+using Realms;
 using Unity;
 using Unity.Lifetime;
 using Xamarin.Forms;
@@ -35,6 +37,8 @@ namespace HackerNewsClient
         protected override void OnStart()
         {
             // Handle when your app starts
+           
+
         }
 
         protected override void OnSleep()

@@ -8,6 +8,7 @@ namespace HackerNewsClient.Repository.DbModel
     public class ItemCommentDbModel : RealmObject
     {
         public string By { get; set; }   
+        [PrimaryKey]
         public long Id { get; set; }
         //public long[] Kids { get; set; }
         public long Parent { get; set; }
