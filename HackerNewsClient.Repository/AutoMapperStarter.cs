@@ -24,6 +24,7 @@ namespace HackerNewsClient.Repository
         public AutoMapperProfile()
         {
             CreateMap<ItemModel, ItemDbModel>().ReverseMap();
+            CreateMap<ItemCommentModel, ItemCommentDbModel > ().ReverseMap();
         }
     }
 }

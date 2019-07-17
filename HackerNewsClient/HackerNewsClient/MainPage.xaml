@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage Title="Hacker News" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9,7 +9,7 @@
     <StackLayout Orientation="Vertical">
         <ActivityIndicator HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50" Color="Red" IsRunning="{Binding IsBusy}" ></ActivityIndicator>
 
-    <ListView ItemsSource="{Binding StoryItems}">
+        <ListView x:Name="listView" ItemsSource="{Binding StoryItems}" ItemSelected="ListView_ItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
                <ViewCell>

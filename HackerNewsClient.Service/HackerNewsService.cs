@@ -24,9 +24,9 @@ namespace HackerNewsClient.Service
             return await GetItems(topStories);
         }
 
-        public Task<List<ItemModel>> GetComments(List<long> ids)
+        public Task<List<ItemCommentModel>> GetComments(List<long> ids)
         {
-            return GetItems(ids);
+            return GetItemComments(ids);
         }
 
         #region Supported Methods
@@ -43,6 +43,12 @@ namespace HackerNewsClient.Service
             var storyModel = await _restService.Get<ItemModel>(url);
             return storyModel;
         }
+        private async Task<ItemCommentModel> GetCommentDetails(long id)
+        {
+            var url = String.Format(ApiConstant.DetailsUrl, id);
+            var commentModel = await _restService.Get<ItemCommentModel>(url);
+            return commentModel;
+        }
         private async Task<List<ItemModel>> GetItems(List<long> ids)
         {
             var itemModels = new List<ItemModel>();
@@ -54,6 +60,19 @@ namespace HackerNewsClient.Service
 
             return itemModels;
         }
+        private async Task<List<ItemCommentModel>> GetItemComments(List<long> ids)
+        {
+            var itemCommentModel = new List<ItemCommentModel>();
+            foreach (var id in ids)
+            {
+                var storyComment = await GetCommentDetails(id);
+                itemCommentModel.Add(storyComment);
+            }
+
+            return itemCommentModel;
+        }
+
+       
 
         #endregion
     }

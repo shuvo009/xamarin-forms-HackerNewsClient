@@ -16,11 +16,11 @@ namespace HackerNewsClient.Core.Models
         [JsonProperty("id")]
         public long Id { get; set; }
 
-        //[JsonProperty("kids")]
-        //public List<long> Kids { get; set; }
+        [JsonProperty("kids")]
+        public List<long> Kids { get; set; }
 
-        //[JsonProperty("parts")]
-        //public List<long> Parts { get; set; }
+        [JsonProperty("parts")]
+        public List<long> Parts { get; set; }
 
         [JsonProperty("score")]
         public long Score { get; set; }

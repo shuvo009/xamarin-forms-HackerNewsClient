@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using CommonServiceLocator;
 using HackerNewsClient.Core.Interface;
+using HackerNewsClient.Core.Models;
 using HackerNewsClient.ViewModels;
+using HackerNewsClient.Views;
 using Xamarin.Forms;
 
 namespace HackerNewsClient
@@ -30,6 +32,14 @@ namespace HackerNewsClient
             base.OnAppearing();
             if (_storyViewModel.StoryItems.Count <= 0)
                 _storyViewModel.LoadStoryCommand.Execute(null);
+        }
+
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null) return;
+            var item = e.SelectedItem as ItemModel;
+            await Navigation.PushAsync(new Comments(item));
+            listView.SelectedItem = null;
         }
     }
 }

@@ -18,11 +18,19 @@ namespace HackerNewsClient
     {
         public App()
         {
+
+
             InitializeComponent();
             RegisterDependency();
             new AutoMapperStarter().Initialize();
-            MainPage = new MainPage();
-        }
+
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.Gray,
+                BarTextColor = Color.White
+            };
+          }
+
 
         protected override void OnStart()
         {
@@ -67,12 +75,14 @@ namespace HackerNewsClient
             #region Repository
 
             unityContainer.RegisterType<IStoryRepository, StoryRepository>();
-            
+            unityContainer.RegisterType<IStoryCommentsRepository, StoryCommentRepository>();
+
             #endregion
 
             #region ViewModel
 
             unityContainer.RegisterInstance(typeof(StoryViewModel));
+            unityContainer.RegisterInstance(typeof(StoryCommentsViewModel));
 
             #endregion
 

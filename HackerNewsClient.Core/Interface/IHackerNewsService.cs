@@ -9,6 +9,6 @@ namespace HackerNewsClient.Core.Interface
     public interface IHackerNewsService
     {
         Task<List<ItemModel>> GetStoryList();
-        Task<List<ItemModel>> GetComments(List<long> ids);
+        Task<List<ItemCommentModel>> GetComments(List<long> ids);
     }
 }

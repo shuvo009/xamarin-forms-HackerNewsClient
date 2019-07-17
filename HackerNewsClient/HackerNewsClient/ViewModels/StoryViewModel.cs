@@ -64,6 +64,8 @@ namespace HackerNewsClient.ViewModels
             }
         }
 
+       
+     
         #endregion
 
         #region Supported Methods

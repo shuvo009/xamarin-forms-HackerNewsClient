@@ -11,13 +11,22 @@ namespace HackerNewsClient.Service.AppServices
     {
         private readonly IHackerNewsService _hackerNewsService;
         private readonly IStoryRepository _storyRepository;
+        private readonly IStoryCommentsRepository storyCommentsRepository;
         private readonly ITextToSpeech _textToSpeech;
 
-        public StoryService(IHackerNewsService hackerNewsService, IStoryRepository storyRepository, ITextToSpeech textToSpeech)
+        public StoryService(IHackerNewsService hackerNewsService, IStoryRepository storyRepository, IStoryCommentsRepository storyCommentsRepository, ITextToSpeech textToSpeech)
         {
             _hackerNewsService = hackerNewsService;
             _storyRepository = storyRepository;
+            this.storyCommentsRepository = storyCommentsRepository;
             _textToSpeech = textToSpeech;
+        }
+
+        public async Task<List<ItemCommentModel>> GetCommentList(List<long> ids)
+        {
+            var comments = await _hackerNewsService.GetComments(ids);
+            await storyCommentsRepository.Insert(comments);
+            return comments;
         }
 
         public async Task<List<ItemModel>> GetStoryList()
