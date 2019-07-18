@@ -2,7 +2,6 @@
 using HackerNewsClient.Core.Interface;
 using HackerNewsClient.Core.Models;
 using HackerNewsClient.Repository.DbModel;
-using HackerNewsClient.Repository.Helpers;
 using Realms;
 using System;
 using System.Collections.Generic;
@@ -16,7 +15,7 @@ namespace HackerNewsClient.Repository
     {
         public List<ItemCommentModel> GetAll(List<long> ids)
         {
-            var realmDb = Realm.GetInstance(RealmHelper.GetRealmConfiguration());
+            var realmDb = GetRealmInstance();
             var dbComments = realmDb.All<ItemCommentDbModel>().ToList();
             var comments = new List<ItemCommentDbModel>();
             foreach (var id in ids)

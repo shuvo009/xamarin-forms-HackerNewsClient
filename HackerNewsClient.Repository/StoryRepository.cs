@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using HackerNewsClient.Core.Interface;
 using HackerNewsClient.Core.Models;
 using HackerNewsClient.Repository.DbModel;
-using HackerNewsClient.Repository.Helpers;
+
 using Realms;
 
 namespace HackerNewsClient.Repository
@@ -15,7 +15,7 @@ namespace HackerNewsClient.Repository
     {
         public override Task Insert(List<ItemModel> models)
         {
-            var realmDb = Realm.GetInstance(RealmHelper.GetRealmConfiguration());
+            var realmDb = GetRealmInstance();
             using (var trans = realmDb.BeginWrite())
             {
                 realmDb.RemoveAll<ItemDbModel>();

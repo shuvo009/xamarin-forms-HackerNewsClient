@@ -28,8 +28,6 @@ namespace HackerNewsClient.ViewModels
             this.crashReportService = crashReportService;
             CommentItems = new ObservableCollection<ItemCommentModel>();
             LoadStoryCommentsCommand = new Command<List<long>>(ExecuteLoadStoryCommentCommand);
-
-
         }
 
         #region Command Executions
