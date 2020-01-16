@@ -7,7 +7,8 @@ Here I demonstration a simle architecture which automatically guide you to write
 
 ## Core Project (HackerNewsClient.Core)
 All of other projects like as HackerNewsClient, HackerNewsClient.Repository, HackerNewsClient.Service etc are refer on this project. All kind of share code or classes like as Interface, Models, Constants etc are goes here. I create several directory for organize code.
-* Classes directory is use for Utility, Constants and more.
-* Interface directory is use for Interfaces
-* Models directory is use for DB Models, ViewModels
-you can create more as your need.
+* **Classes** directory is use for Utility, Constants and more.
+* **Interface** directory is use for Interfaces
+* **Models** directory is use for DB Models, ViewModels
+
+NOTE: you can create more as your need.
