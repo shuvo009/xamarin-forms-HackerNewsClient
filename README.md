@@ -11,4 +11,4 @@ All of other projects like as HackerNewsClient, HackerNewsClient.Repository, Hac
 * **Interface** directory is use for Interfaces
 * **Models** directory is use for DB Models, ViewModels
 
-NOTE: you can create more as your need.
+NOTE: You can create more directory here as much as you need.
