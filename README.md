@@ -14,4 +14,7 @@ All of other projects like as HackerNewsClient, HackerNewsClient.Repository, Hac
 NOTE: You can create more directory here as much as you need.
 
 ## Repository Project (HackerNewsClient.Repository)
-All kind of database related code are goes here. You have to create repository for each table of database and all repository must be inherit from GenericRepository and you have to also create Interface at core project and implement here for each repository.
+All kind of database related code are goes here. You have to create repository for each table of database and all repository must be inherit from GenericRepository and you have to also create Interface at core project and implement here for each repository like as StoryRepository. I use **Realm** as a database and **AutoMapper** to copy data DatabaseModel to Model automatically.
+
+* **DbModels** directory is use for database Models
+
