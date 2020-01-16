@@ -31,3 +31,14 @@ All UI realted code are goes here. You can create Views and other UI component h
 If you need to implement any platform specific logic please implement here. Please check **ITextToSpeech** for more clearance.
 
 * **PlatformService** directory is used for implement platform specific service.
+
+## Technologies Are Used
+* Xamarin Forms
+* Realm
+* Automapper
+
+## Design Patterns are used
+* MVVM
+* Repository patterns 
+* Façade
+* Nunit
